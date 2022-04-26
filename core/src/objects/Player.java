@@ -70,6 +70,9 @@ public class Player extends Entity implements InputProcessor {
         if(item instanceof Bow){
            ((Bow)item).shoot(world, x, y, screenX, screenY);
         }
+        if(item instanceof Cleaver){
+            ((Cleaver)item).use();
+        }
         return false;
     }
 

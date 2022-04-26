@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public abstract class Item {
 
-    private double angle = 0;
+    protected double angle = 0;
     private boolean active = false;
     private boolean firstUse = true;
 

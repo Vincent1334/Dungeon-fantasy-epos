@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6924fa0-95b1-41cf-b817-6149cd2de8f9" name="Default Changelist" comment="" />
+    <list default="true" id="f6924fa0-95b1-41cf-b817-6149cd2de8f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/managers/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/managers/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/managers/PhysicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/managers/PhysicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/objects/Cleaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Cleaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/objects/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/stage/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/stage/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/utils/BodyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/utils/BodyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/utils/Constants.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +61,12 @@
                 <item name="Dungeon" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Dungeon" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -190,17 +210,10 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/desktop/src/ok/cool/DesktopLauncher.java</url>
-          <line>8</line>
-          <properties class="ok.cool.DesktopLauncher" method="main">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="objects.Cleaver" memberName="owner" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

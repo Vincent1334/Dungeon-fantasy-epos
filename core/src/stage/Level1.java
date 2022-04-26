@@ -149,6 +149,7 @@ public class Level1 implements Screen {
 
         //Update Physic
         PhysicManager.destroyBodys(world);
+        PhysicManager.transformBody(world);
         world.step(delta, 6, 2);
         handler.update();
 
@@ -235,7 +236,7 @@ public class Level1 implements Screen {
 
         //System.out.println("x: " + player.getX());
         //System.out.println("y: " + player.getY());
-        //boxRenderer.render(world, camera.combined);
+        boxRenderer.render(world, camera.combined);
     }
 
     @Override
