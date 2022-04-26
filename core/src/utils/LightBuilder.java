@@ -21,6 +21,7 @@ public class LightBuilder {
         PointLight pl = new PointLight(rayHandler, 120, c, dist, x,  y );
         pl.setSoftnessLength(0f);
         pl.setXray(false);
+        pl.setContactFilter((short)(Constants.BIT_PLAYER | Constants.BIT_WALL), (short) 1, (short)(Constants.BIT_PLAYER | Constants.BIT_WALL));
         return pl;
     }
 

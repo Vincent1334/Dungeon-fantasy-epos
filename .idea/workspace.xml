@@ -13,10 +13,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/managers/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/managers/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/objects/Cleaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/objects/Cleaver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/objects/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/objects/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/managers/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/managers/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/objects/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Box.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/objects/Cleaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Cleaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/objects/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/stage/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/stage/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/utils/BodyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/utils/BodyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/utils/LightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/utils/LightBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

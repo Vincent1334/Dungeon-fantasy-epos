@@ -4,6 +4,8 @@ package objects;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.World;
+import managers.PhysicManager;
+
 import java.util.ArrayList;
 
 public class Box {
@@ -20,12 +22,12 @@ public class Box {
         this.cell2 = cel2;
     }
 
-    public void setHealth(int health){
-        this.health = health;
-    }
-
     public int getHealth(){
         return this.health;
+    }
+
+    public void setHealth(int health){
+        this.health = health;
     }
 
     public World getWorld(){

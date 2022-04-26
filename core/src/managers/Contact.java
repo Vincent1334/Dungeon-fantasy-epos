@@ -70,10 +70,12 @@ public class Contact implements ContactListener {
             tmp = (Box) fa.getUserData();
             destroy = true;
             if(fb != null && fb.getUserData() instanceof Entity) return;
+            if(fb != null && fb.getUserData() instanceof Cleaver) return;
         }else if(fb.getUserData() != null && fb.getUserData() instanceof Box) {
             tmp = (Box) fb.getUserData();
             destroy = false;
             if(fa != null && fa.getUserData() instanceof Entity) return;
+            if(fa != null && fa.getUserData() instanceof Cleaver) return;
         }else return;
 
         tmp.setHealth(tmp.getHealth()-1);
@@ -100,23 +102,13 @@ public class Contact implements ContactListener {
         Cleaver cleaver;
         boolean op = false;
         if(fa.getUserData() != null && fa.getUserData() instanceof Cleaver){
-            sensor = fa.getBody();
+            sensor = fb.getBody();
             cleaver = (Cleaver) fa.getUserData();
         }else if(fb.getUserData() != null && fb.getUserData() instanceof Cleaver){
-            sensor = fb.getBody();
+            sensor = fa.getBody();
             cleaver = (Cleaver) fb.getUserData();
-            op = true;
         }else return;
-        if(cleaver.owner() == null) return;
 
-        if(cleaver.isDangerous()){
-            if(op ? fb.getUserData() instanceof Box : fa.getUserData() instanceof Box){
-                System.out.println("Hallo");
-                Box box = (Box) (op ? fb.getUserData() : fa.getUserData());
-                box.setHealth(box.getHealth()-100);
-            }
-        }
+        cleaver.getHitObjects().add(sensor);
     }
-
-
 }

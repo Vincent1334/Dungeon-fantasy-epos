@@ -11,6 +11,8 @@ import managers.PhysicManager;
 import utils.BodyBuilder;
 import utils.Constants;
 
+import java.util.ArrayList;
+
 public class Cleaver extends Item{
 
     private AssetManager assets;
@@ -18,14 +20,13 @@ public class Cleaver extends Item{
     private World world;
     private Entity owner;
     private Body body;
-    private boolean dangerous = false;
-
+    private ArrayList<Body> hitObjects = new ArrayList<Body>();
 
     public Cleaver(AssetManager assets, World world, float x, float y, Entity owner){
         this.assets = assets;
         this.world = world;
         this.owner = owner;
-        body = BodyBuilder.createBox(world, x, y, 20, 20, false, true, true, this);
+        body = BodyBuilder.createBox(world, x+20, y, 20, 20, false, true, true, this, Constants.BIT_SENSOR, Constants.BIT_BREAKABLE, (short) -1);
 
     }
 
@@ -37,12 +38,12 @@ public class Cleaver extends Item{
         activeTime = 100;
     }
 
-    public boolean isDangerous(){
-        return this.dangerous;
-    }
-
     public Entity owner(){
         return this.owner;
+    }
+
+    public ArrayList<Body> getHitObjects(){
+        return hitObjects;
     }
 
     @Override
@@ -50,11 +51,23 @@ public class Cleaver extends Item{
         if(activeTime != 0){
             activeTime --;
             super.angle = Math.sin(activeTime/2)*20;
-            dangerous = true;
         }else{
-            dangerous = false;
+            hitObjects.clear();
         }
-        PhysicManager.addTransformBody(body, new Vector2(owner.getX()+25, owner.getY()));
+
+        //Update Physics and Events
+        body.setLinearVelocity(owner.getBody().getLinearVelocity());
+        for(Body bo : hitObjects){
+            if(bo.getUserData() instanceof Box){
+                Box tmp = (Box) bo.getUserData();
+                tmp.setHealth(tmp.getHealth()-2);
+                if(tmp.getHealth() <= 0){
+                    PhysicManager.addBody(bo);
+                    tmp.getCell1().setTile(null);
+                    tmp.getCell2().setTile(null);
+                }
+            }
+        }
     }
 
     @Override

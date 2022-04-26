@@ -143,6 +143,10 @@ public class Entity {
         return flip;
     }
 
+    public Body getBody(){
+        return body;
+    }
+
     public TextureRegion animate(){
         if(direction[0] || direction[1] ||direction [2] || direction[3]){
             return (TextureRegion) entityRun.getKeyFrame(time, true);
@@ -167,7 +171,7 @@ public class Entity {
         fd.shape = shape;
         fd.density = 1.0f;
         fd.filter.categoryBits = Constants.BIT_PLAYER;
-        fd.filter.maskBits = Constants.BIT_WALL | Constants.BIT_SENSOR;
+        fd.filter.maskBits = Constants.BIT_WALL | Constants.BIT_SENSOR | Constants.BIT_BREAKABLE;
         fd.filter.groupIndex = 0;
         pBody.createFixture(fd).setUserData(this);
         shape.dispose();

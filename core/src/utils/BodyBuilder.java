@@ -55,7 +55,6 @@ public class BodyBuilder {
         fd.shape = shape;
         fd.density = 1.0f;
         fd.isSensor = isSensor;
-        fd.filter.categoryBits = Constants.BIT_WALL;
         fd.filter.maskBits = mBits;
         fd.filter.categoryBits = cBits;
         fd.filter.groupIndex = gIndex;

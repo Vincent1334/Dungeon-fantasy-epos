@@ -98,7 +98,7 @@ public class Level1 implements Screen {
         for(int x = 0; x < walls.getWidth(); x++){
             for(int y = 0; y < walls.getHeight(); y++){
                 if(walls.getCell(x, y) != null && walls.getCell(x, y).getTile().getId() == 867){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, "");
+                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, "", Constants.BIT_WALL, (short)(Constants.BIT_SENSOR | Constants.BIT_PLAYER), (short)1);
                 }
             }
         }
@@ -109,14 +109,16 @@ public class Level1 implements Screen {
         for(int x = 0; x < objects.getWidth(); x++){
             for(int y = 0; y < objects.getHeight(); y++){
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 37){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 35, true, false, false, "");
+                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 35, true, false, false, "", Constants.BIT_WALL, (short)(Constants.BIT_WALL | Constants.BIT_PLAYER), (short) 1);
                     lights.add(new PointLight(handler, 5000, Color.valueOf("#ebb134"), 40, x*16+8, y*16));
+                    lights.get(lights.size()-1).setContactFilter((short)(Constants.BIT_PLAYER | Constants.BIT_WALL), (short) 1, (short)(Constants.BIT_PLAYER | Constants.BIT_WALL));
                 }
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 659){
                     lights.add(new PointLight(handler, 5000, Color.valueOf("#7dc986"), 20, x*16+8, y*16+5));
+                    lights.get(lights.size()-1).setContactFilter((short)(Constants.BIT_PLAYER | Constants.BIT_WALL), (short) 1, (short)(Constants.BIT_PLAYER | Constants.BIT_WALL));
                 }
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 627){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, new Box(items, world, objects.getCell(x, y), objects.getCell(x, y+1)));
+                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, new Box(items, world, objects.getCell(x, y), objects.getCell(x, y+1)), Constants.BIT_BREAKABLE, (short)(Constants.BIT_PLAYER | Constants.BIT_SENSOR), (short) 1);
                 }
             }
         }
@@ -236,7 +238,7 @@ public class Level1 implements Screen {
 
         //System.out.println("x: " + player.getX());
         //System.out.println("y: " + player.getY());
-        boxRenderer.render(world, camera.combined);
+        //boxRenderer.render(world, camera.combined);
     }
 
     @Override
