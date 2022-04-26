@@ -129,6 +129,7 @@ public class Level1 implements Screen {
         entitys.get(0).setWaypoints(new Vector2[]{new Vector2(470, 440), new Vector2(501, 428), new Vector2(462, 414), new Vector2(435, 435)}, 5);
 
         items.add(BodyBuilder.createBox(world, 240, 490, 7, 25, false, true, true, new Cleaver(assets)));
+        //Test
 
         //Create Camera
         camera = new OrthographicCamera();
