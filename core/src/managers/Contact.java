@@ -111,6 +111,7 @@ public class Contact implements ContactListener {
 
         if(cleaver.isDangerous()){
             if(op ? fb.getUserData() instanceof Box : fa.getUserData() instanceof Box){
+                System.out.println("Hallo");
                 Box box = (Box) (op ? fb.getUserData() : fa.getUserData());
                 box.setHealth(box.getHealth()-100);
             }

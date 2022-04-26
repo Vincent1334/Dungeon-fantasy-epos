@@ -25,7 +25,7 @@ public class Cleaver extends Item{
         this.assets = assets;
         this.world = world;
         this.owner = owner;
-        body = BodyBuilder.createBox(world, x, y, 20, 20, false, true, true, this, Constants.BIT_ITEM, Constants.BIT_ITEM, (short) 1);
+        body = BodyBuilder.createBox(world, x, y, 20, 20, false, true, true, this);
 
     }
 
@@ -54,7 +54,7 @@ public class Cleaver extends Item{
         }else{
             dangerous = false;
         }
-        PhysicManager.addTransformBody(body, new Vector2(owner.getX()+8, owner.getY()));
+        PhysicManager.addTransformBody(body, new Vector2(owner.getX()+25, owner.getY()));
     }
 
     @Override
