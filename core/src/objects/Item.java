@@ -2,12 +2,14 @@ package objects;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.physics.box2d.Body;
 
 public abstract class Item {
 
     protected double angle = 0;
     private boolean active = false;
     private boolean firstUse = true;
+    protected Body body;
 
     public Item(){
     }
@@ -30,6 +32,10 @@ public abstract class Item {
             return this.isFirstUse();
         }
         return false;
+    }
+
+    public Body getBody(){
+        return body;
     }
 
     public boolean isActive(){

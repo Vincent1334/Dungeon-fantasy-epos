@@ -51,7 +51,7 @@ public class Level1 implements Screen {
     TiledMap tiledMap;
 
     //Items
-    ArrayList<Body> items = new ArrayList<Body>();
+    ArrayList<Item> items = new ArrayList<Item>();
 
     //Handle Inputs
     InputMultiplexer inputMultiplexer = new InputMultiplexer();
@@ -98,7 +98,7 @@ public class Level1 implements Screen {
         for(int x = 0; x < walls.getWidth(); x++){
             for(int y = 0; y < walls.getHeight(); y++){
                 if(walls.getCell(x, y) != null && walls.getCell(x, y).getTile().getId() == 867){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, "");
+                    new HitBox(world, x*16, y*16+10, 16, 16);
                 }
             }
         }
@@ -109,14 +109,14 @@ public class Level1 implements Screen {
         for(int x = 0; x < objects.getWidth(); x++){
             for(int y = 0; y < objects.getHeight(); y++){
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 37){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 35, true, false, false, "");
+                    new HitBox(world, x*16, y*16+10, 16, 35);
                     lights.add(new PointLight(handler, 5000, Color.valueOf("#ebb134"), 40, x*16+8, y*16));
                 }
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 659){
                     lights.add(new PointLight(handler, 5000, Color.valueOf("#7dc986"), 20, x*16+8, y*16+5));
                 }
                 if(objects.getCell(x, y) != null && objects.getCell(x, y).getTile().getId() == 627){
-                    BodyBuilder.createBox(world, x*16, y*16+10, 16, 16, true, false, false, new Box(items, world, objects.getCell(x, y), objects.getCell(x, y+1)));
+                    new Box(null, world, objects.getCell(x, y), objects.getCell(x, y+1), x*16, y*16);
                 }
             }
         }
@@ -128,7 +128,7 @@ public class Level1 implements Screen {
         entitys.get(0).setSpeed(10);
         entitys.get(0).setWaypoints(new Vector2[]{new Vector2(470, 440), new Vector2(501, 428), new Vector2(462, 414), new Vector2(435, 435)}, 5);
 
-        items.add(BodyBuilder.createBox(world, 240, 490, 7, 25, false, true, true, new Bow(assets)));
+        items.add(new Bow(assets, world, 240, 490));
 
         //Create Camera
         camera = new OrthographicCamera();
@@ -185,24 +185,23 @@ public class Level1 implements Screen {
         //Render items
         batch.begin();
         ArrayList<Body> rem = new ArrayList<Body>();
-        for(Body item : items){
-            if(item.getUserData() != null){
+        for(Item item : items){
+            batch.draw(item.getTexture(), item.getBody().getPosition().x-3, item.getBody().getPosition().y+(float)Math.sin(delta*10)-13, item.getTexture().getWidth(), item.getTexture().getHeight());
 
-                batch.draw(((Item)item.getUserData()).getTexture(), item.getPosition().x-3, item.getPosition().y+(float)Math.sin(delta*10)-13, ((Item)item.getUserData()).getTexture().getWidth(), ((Item)item.getUserData()).getTexture().getHeight());
+            if(item.isActive()){
+                if(player.getItem() == null){
 
-                if(((Item)item.getUserData()).isActive()){
-                    if(player.getItem() == null){
-                        if(item.getUserData() instanceof Cleaver) item.setUserData(new Cleaver(assets, world, player.getX(), player.getY(), player));
-
-                        player.setItem((Item)item.getUserData());
-                        world.destroyBody(item);
-                        ((Sound)assets.get("sounds/blop.wav")).play(1);
-                        rem.add(item);
-                    }else{
-                        ((Item)item.getUserData()).setActive(false);
-                    }
+                    player.setItem(item);
+                    world.destroyBody(item.getBody());
+                    ((Sound)assets.get("sounds/blop.wav")).play(1);
+                    rem.add(item.getBody());
+                }else{
+                    item.setActive(false);
                 }
             }
+
+
+
         }
         items.removeAll(rem);
         batch.end();
@@ -236,7 +235,7 @@ public class Level1 implements Screen {
 
         //System.out.println("x: " + player.getX());
         //System.out.println("y: " + player.getY());
-        //boxRenderer.render(world, camera.combined);
+        boxRenderer.render(world, camera.combined);
     }
 
     @Override
