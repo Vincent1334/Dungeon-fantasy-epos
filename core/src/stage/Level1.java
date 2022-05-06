@@ -184,28 +184,24 @@ public class Level1 implements Screen {
 
         //Render items
         batch.begin();
-        ArrayList<Body> rem = new ArrayList<Body>();
+        ArrayList<Item> rem = new ArrayList<Item>();
         for(Item item : items){
             batch.draw(item.getTexture(), item.getBody().getPosition().x-3, item.getBody().getPosition().y+(float)Math.sin(delta*10)-13, item.getTexture().getWidth(), item.getTexture().getHeight());
 
             if(item.isActive()){
                 if(player.getItem() == null){
-
                     player.setItem(item);
                     world.destroyBody(item.getBody());
                     ((Sound)assets.get("sounds/blop.wav")).play(1);
-                    rem.add(item.getBody());
+                    rem.add(item);
                 }else{
                     item.setActive(false);
                 }
             }
 
-
-
         }
         items.removeAll(rem);
         batch.end();
-
 
         //Render Player
         batch.begin();

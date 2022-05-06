@@ -19,7 +19,6 @@ public class Contact implements ContactListener {
         checkWallDownEvent(fa, fb, 0.4f);
         checkItems(fa, fb);
         checkArrows(fa, fb);
-        checkCleaver(fa, fb);
         checkBoxs(fa, fb);
     }
 
@@ -94,28 +93,4 @@ public class Contact implements ContactListener {
             fb.getBody().setLinearVelocity(0, 0);
         }
     }
-
-    public void checkCleaver(Fixture fa, Fixture fb){
-        Body sensor;
-        Cleaver cleaver;
-        boolean op = false;
-        if(fa.getUserData() != null && fa.getUserData() instanceof Cleaver){
-            sensor = fa.getBody();
-            cleaver = (Cleaver) fa.getUserData();
-        }else if(fb.getUserData() != null && fb.getUserData() instanceof Cleaver){
-            sensor = fb.getBody();
-            cleaver = (Cleaver) fb.getUserData();
-            op = true;
-        }else return;
-        if(cleaver.owner() == null) return;
-
-        if(cleaver.isDangerous()){
-            if(op ? fb.getUserData() instanceof Box : fa.getUserData() instanceof Box){
-                Box box = (Box) (op ? fb.getUserData() : fa.getUserData());
-                box.setHealth(box.getHealth()-100);
-            }
-        }
-    }
-
-
 }

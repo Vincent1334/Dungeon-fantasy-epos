@@ -69,7 +69,7 @@ public class Bow extends Item {
         fd.isSensor = true;
         fd.filter.categoryBits = Constants.BIT_SENSOR;
         fd.filter.maskBits = Constants.BIT_PLAYER | Constants.BIT_WALL;
-        pBody.createFixture(fd);
+        pBody.createFixture(fd).setUserData(this);
         shape.dispose();
         super.body = pBody;
     }
