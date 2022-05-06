@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/managers/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/managers/Contact.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/objects/Bow.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/objects/Bow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/stage/Level1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/stage/Level1.class" afterDir="false" />
@@ -21,6 +22,9 @@
       <change beforePath="$PROJECT_DIR$/core/src/managers/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/managers/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/objects/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/objects/Bow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/stage/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/stage/Level1.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
